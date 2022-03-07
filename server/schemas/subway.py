@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import List
 
 from pydantic import BaseModel
 
@@ -9,13 +10,17 @@ class SubwayLocation(BaseModel):
     normalized_location: float  # location between two stations [0~1]
 
 
-class SubwayStatus(str, Enum):
+class TrainStatus(str, Enum):
     STOPPED = "STOPPED"
     MOVING = "MOVING"
 
 
-class Subway(BaseModel):
+class Train(BaseModel):
     line_number: int
     train_number: str
     location: SubwayLocation
-    status: SubwayStatus
+    status: TrainStatus
+
+
+class TrainLocationPayload(BaseModel):
+    trains: List[Train]
