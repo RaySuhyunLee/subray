@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from schemas.subway import TrainLocationPayload
+from schemas.train import TrainPayload
 
 
 class TestGetLocation:
@@ -7,5 +7,5 @@ class TestGetLocation:
         resp = test_client.get('/subway/locations')
         assert resp.status_code == 200
         result = resp.json()
-        train_locations = TrainLocationPayload(**result)
+        train_locations = TrainPayload(**result)
         assert len(train_locations.trains) > 0

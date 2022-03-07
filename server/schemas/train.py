@@ -22,5 +22,5 @@ class Train(BaseModel):
     status: TrainStatus
 
 
-class TrainLocationPayload(BaseModel):
+class TrainPayload(BaseModel):
     trains: List[Train]
