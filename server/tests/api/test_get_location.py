@@ -7,5 +7,5 @@ class TestGetLocation:
         resp = test_client.get('/subway/locations')
         assert resp.status_code == 200
         result = resp.json()
-        train_locations = TrainPayload(**result)
-        assert len(train_locations.trains) > 0
+        train_payload = TrainPayload(**result)
+        assert len(train_payload.trains) > 0

@@ -17,7 +17,7 @@ class TrainStatus(str, Enum):
 
 class Train(BaseModel):
     line_number: int
-    train_number: str
+    train_id: str
     location: SubwayLocation
     status: TrainStatus
 
